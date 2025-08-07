@@ -132,7 +132,7 @@ export const leaderData: LeaderData = {
       name: "Leo Darshika Prabashwara",
       role: "Zone Director - Zone C2",
       image:
-        "images/leaders/Region and Zone Directors/Darshika Prabhashwara.jpeg",
+        "images/leaders/Region and Zone Directors/Darshika Prabhashwara.jpg",
     },
   ],
   directors: [
