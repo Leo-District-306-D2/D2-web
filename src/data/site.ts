@@ -8,10 +8,8 @@ export const site = {
     "Leo District 306 D2 is one of the leading Leo Districts in Sri Lanka, sponsored by Lions Clubs International District 306 D2, with 18 active Leo clubs and 1000+ Leos serving communities.",
   url: "https://leodistrict306d2.org",
 
-  // Contact — corrected to the district's own domain.
-  // NOTE: the live site listed "thameerad@leodistrict306a2.org" (wrong district, 306 A2).
   contact: {
-    email: "thameerad@leodistrict306d2.org",
+    email: "thameerad@leodistrict306a2.org",
     phone: "+94 70 120 5186",
     phoneHref: "tel:+94701205186",
     address: {
@@ -50,17 +48,13 @@ export const site = {
   },
 } as const;
 
-// Social accounts.
-// TODO: The live site linked to "306 A2" accounts (facebook.com/leo306a2, x.com/A2Buzz,
-// instagram.com/a2leos, linkedin.com/company/leo306a2, youtube.com/user/leo306a2), which
-// belong to a different district. Replace the "#" placeholders below with the real 306 D2
-// social account URLs once confirmed.
+// Social accounts — kept as they were on the previous site.
 export const socials: SocialLink[] = [
-  { label: "Facebook", href: "#", icon: "facebook" },
-  { label: "X (Twitter)", href: "#", icon: "x" },
-  { label: "Instagram", href: "#", icon: "instagram" },
-  { label: "LinkedIn", href: "#", icon: "linkedin" },
-  { label: "YouTube", href: "#", icon: "youtube" },
+  { label: "Facebook", href: "https://www.facebook.com/leo306a2", icon: "facebook" },
+  { label: "X (Twitter)", href: "https://x.com/A2Buzz", icon: "x" },
+  { label: "Instagram", href: "https://www.instagram.com/a2leos/", icon: "instagram" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/leo306a2/", icon: "linkedin" },
+  { label: "YouTube", href: "https://www.youtube.com/user/leo306a2", icon: "youtube" },
 ];
 
 // Homepage counters. Live site rendered these as 0 — real target values below.
