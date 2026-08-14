@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette sampled directly from the "United in Purpose" 2026/27 DP badge.
+     Backgrounds stay white; navy carries structure, gold carries accent. */
+  --color-brand: #284e63; /* deep teal-navy — headings, links, primary text accents */
+  --color-brand-deep: #1e455d; /* gradient partner */
+  --color-brand-dark: #142934; /* darkest navy — footer + dark bands */
+  --color-brand-light: #2d566d;
+  --color-brand-50: #f2f6f8; /* faint navy tint for icon wells */
+  --color-brand-100: #dde8ee;
+  --color-slate: #5b7688; /* muted secondary */
+
+  --color-gold: #d2a74a; /* metallic gold — primary accent */
+  --color-gold-deep: #c59533; /* richer gold for icons/gradients */
+  --color-gold-dark: #96701e; /* accessible gold for text on white (~5:1) */
+  --color-gold-light: #ecd48f; /* highlight gold — labels on dark */
+  --color-maroon: #7a1533;
+
+  --color-ink: #142934; /* navy-tinted body/heading ink */
+  --color-muted: #4b5563;
+  --color-surface: #ffffff;
+
+  /* Fonts: the live site renders in the default system sans stack, so Tailwind's
+     default --font-sans is left untouched here (Geist is loaded but unused, as on live). */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1f2937;
+}
+
+* {
+  border-color: color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-brand) 30%, transparent);
+  color: var(--color-ink);
+}
+
+/* Headings inherit the body stack with normal tracking, matching the live site. */
+
+/* Reusable helpers */
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 80rem; /* 1280px */
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  /* Live site uses rectangular (rounded-lg) buttons, not pills. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn:hover { transform: scale(1.05); }
+
+  /* Primary CTA — bright golden-yellow, with navy text for contrast. */
+  .btn-primary {
+    background-image: linear-gradient(to right, #ffd21a, #f5b301);
+    color: var(--color-brand-dark);
+    box-shadow: 0 10px 20px -6px color-mix(in srgb, #f5b301 55%, transparent);
+  }
+  .btn-primary:hover {
+    background-image: linear-gradient(to right, #f5b301, #e09600);
+    box-shadow: 0 14px 24px -8px color-mix(in srgb, #f5b301 70%, transparent);
+  }
+
+  /* Secondary CTA — navy. */
+  .btn-slate {
+    background-image: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
+    color: #fff;
+    box-shadow: 0 10px 20px -6px color-mix(in srgb, var(--color-brand) 45%, transparent);
+  }
+  .btn-slate:hover {
+    background-image: linear-gradient(to right, var(--color-brand-dark), #0b1a22);
+  }
+
+  .btn-outline {
+    border: 2px solid var(--color-brand);
+    color: var(--color-brand);
+    background: transparent;
+  }
+  .btn-outline:hover {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  .btn-gold {
+    background: var(--color-gold);
+    color: var(--color-brand-dark);
+  }
+  .btn-gold:hover { background: var(--color-gold-deep); }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gold-dark);
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 40px -24px rgba(29, 32, 48, 0.35);
+  }
+}
+
+/* ---- Animations mirroring the live site ---- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.6s ease both; }
+
+@keyframes fade-in-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in-left { animation: fade-in-left 0.9s ease both; }
+
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in-right { animation: fade-in-right 0.9s ease both; }
+
+@keyframes slide-in-bottom {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in-bottom { animation: slide-in-bottom 0.8s ease both; }
+.animate-slide-in-bottom-delay { animation: slide-in-bottom 0.8s ease 0.2s both; }
+.animate-slide-in-bottom-delay-2 { animation: slide-in-bottom 0.8s ease 0.4s both; }
+
+.animate-fade-in-up { animation: slide-in-bottom 0.8s ease both; }
+.animate-fade-in-up-delay { animation: slide-in-bottom 0.8s ease 0.2s both; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float 9s ease-in-out infinite; }
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(18px); }
+}
+.animate-float-reverse-slow { animation: float-reverse 10s ease-in-out infinite; }
+
+@keyframes spin-slow-kf {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow-kf 14s linear infinite; }
+
+@keyframes pulse-slow-kf {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+.animate-pulse-slow { animation: pulse-slow-kf 4s ease-in-out infinite; }
+.animate-pulse-slow-delay { animation: pulse-slow-kf 4s ease-in-out 1s infinite; }
+
+/* Hero badge — subtle bob (gentler than the generic float). */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-28px); }
+}
+.animate-float-gentle { animation: float-gentle 7s ease-in-out infinite; }
+
+/* Hero badge — a metallic light-gleam that sweeps diagonally across the emblem.
+   The element is masked to the badge PNG (via inline mask-image), so the moving
+   highlight only appears on the badge silhouette, like light catching polished gold. */
+.badge-shine {
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  overflow: hidden;
+}
+.badge-shine::after {
+  content: "";
+  position: absolute;
+  top: -25%;
+  bottom: -25%;
+  left: 0;
+  width: 55%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 38%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.15) 62%,
+    transparent 100%
+  );
+  transform: translateX(-220%) skewX(-12deg);
+  animation: badge-gleam 5s ease-in-out infinite;
+}
+@keyframes badge-gleam {
+  0% { transform: translateX(-220%) skewX(-12deg); }
+  22%, 100% { transform: translateX(320%) skewX(-12deg); }
+}
+
+/* Hero badge — twinkling gold glints around the emblem. */
+.sparkle {
+  position: absolute;
+  background: #fff;
+  clip-path: polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%);
+  filter: drop-shadow(0 0 5px rgba(236, 212, 143, 0.95));
+  opacity: 0;
+  transform: scale(0.3);
+  animation: twinkle 3.4s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(90deg); }
+}
+.sparkle-1 { top: 5%; right: 13%; height: 18px; width: 18px; animation-delay: 0s; }
+.sparkle-2 { top: 42%; left: -2%; height: 12px; width: 12px; animation-delay: 0.9s; }
+.sparkle-3 { right: 6%; bottom: 15%; height: 15px; width: 15px; animation-delay: 1.7s; }
+.sparkle-4 { bottom: 5%; left: 15%; height: 10px; width: 10px; animation-delay: 2.5s; }
+
+/* Honour reduced-motion for the hero's decorative motion. */
+@media (prefers-reduced-motion: reduce) {
+  .badge-shine::after,
+  .sparkle,
+  .animate-float,
+  .animate-float-gentle,
+  .animate-float-slow,
+  .animate-float-reverse-slow {
+    animation: none;
+  }
+  .sparkle { opacity: 0; }
+}
