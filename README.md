@@ -1,146 +1,80 @@
-# Leo District 306D2 Website
+# LEO District 306 D2 — Website
 
-![Leo District Logo](public/images/logos/DP%20logo%2025_26_Final.png)
+A rebuild of the LEO District 306 D2 website in **Next.js 16** (App Router) + **TypeScript** +
+**Tailwind CSS v4**. All page content lives in typed data files under `src/data/`, so the site can be
+updated without touching component code.
 
-A modern, responsive website for Leo District 306D2, built with Next.js and featuring beautiful UI components, interactive maps, and comprehensive information about the district's activities, leaders, and clubs.
-
-## 🚀 Features
-
-- **Modern Design**: Clean, responsive interface built with Tailwind CSS
-- **Interactive District Map**: Google Maps integration showing district boundaries
-- **Leader Profiles**: Comprehensive information about district leaders
-- **Club Directory**: Complete listing of Leo clubs in the district
-- **Gallery**: Photo gallery showcasing district events and activities
-- **Contact Information**: Easy ways to get in touch with district leadership
-- **Downloads**: Access to important documents and resources
-
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 15.3.2
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: Material-UI (MUI)
-- **Icons**: Lucide React
-- **Charts**: Recharts
-- **Maps**: React Google Maps API
-
-## 📋 Prerequisites
-
-Before you begin, ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (version 18 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-
-## 🚀 Getting Started
-
-### 1. Install Dependencies
-
-First, install all the required dependencies:
+## Getting started
 
 ```bash
-npm install
+npm install      # already installed during scaffold
+npm run dev      # start dev server at http://localhost:3000
+npm run build    # production build (static prerender)
+npm run start    # serve the production build
+npm run lint     # eslint
 ```
 
-### 2. Run Development Server
+## Project structure
 
-Start the development server:
+```
+src/
+  app/                     # routes (App Router)
+    page.tsx               # Home
+    about/                 # About
+    leaders/               # Current Leaders
+      past-presidents/     # Past District Presidents
+    clubs/                 # Clubs (interactive region/zone explorer)
+    gallery/               # Gallery (filter + lightbox)
+    downloads/             # Downloads
+    contact/               # Contact (+ map)
+    not-found.tsx          # custom 404
+    layout.tsx             # root layout, fonts, metadata, Navbar/Footer
+    globals.css            # Tailwind theme + brand tokens
+  components/              # Navbar, Footer, cards, StatCounter, GalleryGrid, ClubsExplorer, Icons…
+  data/                    # ← EDIT CONTENT HERE
+  lib/types.ts            # shared content types
+public/images/            # all real assets pulled from the live site
+scripts/                  # one-off helpers to (re)sync assets/content from the live site
+```
+
+### Editing content
+| What | File |
+|------|------|
+| Name, contact, socials, stats | `src/data/site.ts` |
+| Nav / footer links | `src/data/navigation.ts` |
+| Current leaders | `src/data/leaders.ts` |
+| Past presidents | `src/data/pastPresidents.ts` |
+| Clubs / regions / zones | `src/data/clubs.ts` |
+| Homepage projects | `src/data/projects.ts` |
+| Gallery | `src/data/gallery.ts` |
+| Downloads | `src/data/downloads.ts` |
+| About page + homepage blurbs | `src/data/about.ts` |
+| "What We Do" services | `src/data/services.ts` |
+
+## Fixes applied vs. the live site
+- **Contact email** corrected from `thameerad@leodistrict306a2.org` (wrong district) → `…@leodistrict306d2.org`.
+- **Social links** were pointing to *306 A2* accounts — replaced with clearly-marked placeholders (see TODO below).
+- President name spelling unified to **Eshan Kasturiarachchi** across pages.
+- Title typo fixed: "Leo-Lion Relation" → "Relations".
+- Past-president club-name typos fixed (e.g. "University of Moratuw", "Rattanapitiya", "EMPOWERD", lowercase "leo").
+- Region B director photo path fixed (live site referenced a `.JPG` that 404s; real file is lowercase).
+- **Downloads** page now has a working layout with categorized cards (was empty).
+- Stat counters show real values with a count-up animation (were rendering as `0`).
+- Added a styled **404** page and an embedded **map** on Contact.
+
+## Remaining TODOs (need info from the district)
+- [ ] **DP theme logo** — replace `public/images/logos/DP-logo-2026-27.png` (currently a placeholder using last year's DP logo) with the official "United in Purpose" 2026/27 artwork. Keep the same filename; no code change needed.
+- [ ] **Social account URLs** for 306 D2 — placeholders (`#`) in `src/data/site.ts`.
+- [ ] **Replace placeholder headshots** (`/images/unknown person.jpg`) — flagged with `placeholder: true` in `src/data/leaders.ts` (Ranmal Perera, Durga, Umayangi de Silva, Pamudi Vimansa, Thathsara Wagasenevi, Zahra Zuhri, Dimuth Samaraweera).
+- [ ] **District Vice President photo** carries a "306 A2" event watermark — see note in `leaders.ts`.
+- [ ] **Confirm** the canonical spelling of "Eshan Kasturiarachchi".
+- [ ] **Fill in remaining clubs** — only Zone A1's 3 clubs have detail; zones A2/B1/B2/C1/C2 are scaffolded in `src/data/clubs.ts`.
+- [ ] **Add real download files** — drop files in `public/downloads/` and set `href` in `src/data/downloads.ts`.
+
+## Re-syncing from the live site
+`scripts/fetch-assets.mjs` re-downloads all images into `public/`.
+`scripts/discover-assets.mjs` / `scripts/extract-text.mjs` were used to inventory image URLs and page text.
 
 ```bash
-npm run dev
+node scripts/fetch-assets.mjs
 ```
-
-The application will be available at [http://localhost:3000](http://localhost:3000).
-
-### 3. Build for Production
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-### 4. Linting
-
-To check for code quality issues:
-
-```bash
-npm run lint
-```
-
-## 📁 Project Structure
-
-```
-├── app/                    # Next.js app directory
-│   ├── about/             # About page
-│   ├── clubs/             # Clubs directory
-│   ├── contact/           # Contact page
-│   ├── downloads/         # Downloads page
-│   ├── gallery/           # Gallery page
-│   ├── leaders/           # Leaders directory
-│   ├── api/               # API routes
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── components/            # Reusable components
-├── public/               # Static assets
-│   ├── images/           # Image assets
-│   │   ├── logos/        # Logo images
-│   │   ├── leaders/      # Leader photos
-│   │   └── projects/     # Project images
-│   └── downloads/        # Downloadable files
-├── types/                # TypeScript type definitions
-├── utils/                # Utility functions
-└── asset/                # Additional assets
-```
-
-## 🖼️ Key Images
-
-The project includes several important images:
-
-- **District Logo**: `public/images/logos/DP logo 25_26_Final.png`
-- **District Map**: `public/images/D2-map.png`
-- **Leader Photos**: Various leader images in `public/images/leaders/`
-- **Project Images**: Event and activity photos in `public/images/projects/`
-
-## 🎨 Design Features
-
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
-- **Modern UI**: Clean interface with Material-UI components
-- **Interactive Elements**: Hover effects, smooth transitions, and animations
-- **Accessibility**: Built with accessibility best practices
-- **Performance**: Optimized images and fast loading times
-
-## 📱 Pages
-
-- **Home**: Welcome collage, district map, quick stats, and recent updates
-- **About**: Information about the district and its mission
-- **Leaders**: Profiles of district leadership
-- **Clubs**: Directory of all Leo clubs in the district
-- **Gallery**: Photo gallery of events and activities
-- **Downloads**: Important documents and resources
-- **Contact**: Contact information and forms
-
-## 🔧 Configuration
-
-The project uses several configuration files:
-
-- `next.config.ts` - Next.js configuration
-- `tailwind.config.js` - Tailwind CSS configuration
-- `tsconfig.json` - TypeScript configuration
-- `eslint.config.mjs` - ESLint configuration
-- `postcss.config.mjs` - PostCSS configuration
-
-## 🌐 Environment Variables
-
-The project uses cross-env for environment variable management. The development server runs on `0.0.0.0:3000` by default.
-
-## 📄 License
-
-This project is private and proprietary to Leo District 306D2.
-
-## 🤝 Contributing
-
-This is a private project for Leo District 306D2. For questions or support, please contact the district leadership.
-
----
-
-**Built with ❤️ for Leo District 306D2 IT Team 2025**
