@@ -52,24 +52,26 @@ scripts/                  # one-off helpers to (re)sync assets/content from the 
 | "What We Do" services | `src/data/services.ts` |
 
 ## Fixes applied vs. the live site
-- **Contact email** corrected from `thameerad@leodistrict306a2.org` (wrong district) → `…@leodistrict306d2.org`.
-- **Social links** were pointing to *306 A2* accounts — replaced with clearly-marked placeholders (see TODO below).
 - President name spelling unified to **Eshan Kasturiarachchi** across pages.
 - Title typo fixed: "Leo-Lion Relation" → "Relations".
 - Past-president club-name typos fixed (e.g. "University of Moratuw", "Rattanapitiya", "EMPOWERD", lowercase "leo").
 - Region B director photo path fixed (live site referenced a `.JPG` that 404s; real file is lowercase).
-- **Downloads** page now has a working layout with categorized cards (was empty).
+- **Downloads** page now has a working layout with categorized cards (was empty), and links to the real administrative documents and officer appointment letters (was placeholder-only in the initial rebuild).
 - Stat counters show real values with a count-up animation (were rendering as `0`).
 - Added a styled **404** page and an embedded **map** on Contact.
 
+> Note: the initial rebuild also "corrected" the contact email (`…@306a2.org` → `…@306d2.org`) and
+> replaced the social media links with placeholders, both on the assumption that the `306a2`
+> email/accounts belonged to a different district. That assumption was wrong — both were restored
+> to their original values in `src/data/site.ts`.
+
 ## Remaining TODOs (need info from the district)
 - [ ] **DP theme logo** — replace `public/images/logos/DP-logo-2026-27.png` (currently a placeholder using last year's DP logo) with the official "United in Purpose" 2026/27 artwork. Keep the same filename; no code change needed.
-- [ ] **Social account URLs** for 306 D2 — placeholders (`#`) in `src/data/site.ts`.
+- [ ] **Brand Guidelines PDF** — placeholder (no `href`) in the Logos & Branding section of `src/data/downloads.ts`.
 - [ ] **Replace placeholder headshots** (`/images/unknown person.jpg`) — flagged with `placeholder: true` in `src/data/leaders.ts` (Ranmal Perera, Durga, Umayangi de Silva, Pamudi Vimansa, Thathsara Wagasenevi, Zahra Zuhri, Dimuth Samaraweera).
 - [ ] **District Vice President photo** carries a "306 A2" event watermark — see note in `leaders.ts`.
 - [ ] **Confirm** the canonical spelling of "Eshan Kasturiarachchi".
 - [ ] **Fill in remaining clubs** — only Zone A1's 3 clubs have detail; zones A2/B1/B2/C1/C2 are scaffolded in `src/data/clubs.ts`.
-- [ ] **Add real download files** — drop files in `public/downloads/` and set `href` in `src/data/downloads.ts`.
 
 ## Re-syncing from the live site
 `scripts/fetch-assets.mjs` re-downloads all images into `public/`.
