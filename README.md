@@ -80,3 +80,5 @@ scripts/                  # one-off helpers to (re)sync assets/content from the 
 ```bash
 node scripts/fetch-assets.mjs
 ```
+
+## Leo District 306 D2 Website
