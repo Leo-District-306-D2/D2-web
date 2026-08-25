@@ -69,7 +69,7 @@ const structuredData = {
       name: site.name,
       alternateName: site.shortName,
       url: site.url,
-      logo: `${site.url}${site.logos.emblem}`,
+      logo: `${site.url}${site.logos.dp}`,
       image: `${site.url}${site.logos.dp}`,
       description: site.description,
       email: site.contact.email,

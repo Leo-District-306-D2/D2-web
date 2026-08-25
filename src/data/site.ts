@@ -23,7 +23,9 @@ export const site = {
 
   logos: {
     // Official high-resolution branding assets (public/images/logos/official/).
-    emblem: "/images/logos/official/leo-emblem.png", // square Leo emblem — navbar + favicon
+    // Square Leo movement emblem. No longer used in the UI — the DP theme badge (`dp` below)
+    // took over the footer, favicon and Organization logo. Still offered on /downloads.
+    emblem: "/images/logos/official/leo-emblem.png",
     emblemWhite: "/images/logos/official/leo-emblem-white.png",
     wordmark: "/images/logos/official/leos-sl-maldives.png", // "Leos of Sri Lanka & Maldives"
     wordmarkWhite: "/images/logos/official/leos-sl-maldives-white.png",
