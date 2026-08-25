@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     siteName: "LEO District 306 D2",
     type: "website",
   },
-  icons: { icon: site.logos.emblem },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
