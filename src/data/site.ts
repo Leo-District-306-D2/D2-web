@@ -8,10 +8,13 @@ export const site = {
     "Leo District 306 D2 is one of the leading Leo Districts in Sri Lanka, sponsored by Lions Clubs International District 306 D2, with 18 active Leo clubs and 1000+ Leos serving communities.",
   url: "https://leodistrict306d2.org",
 
+  // District President's contact, per the "District Council" tab of the 2026/27 council workbook.
+  // Update these three lines whenever the DP changes; the footer, /contact and the JSON-LD
+  // Organization block in app/layout.tsx all read from here.
   contact: {
-    email: "thameerad@leodistrict306a2.org",
-    phone: "+94 70 120 5186",
-    phoneHref: "tel:+94701205186",
+    email: "buddhika@leodistrict306a2.org",
+    phone: "+94 77 459 8115",
+    phoneHref: "tel:+94774598115",
     address: {
       name: "Leo Youth Centre",
       line: "Vidya Mawatha",

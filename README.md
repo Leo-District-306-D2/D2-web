@@ -1,4 +1,4 @@
-# LEO District 306 D2 — Website
+# LEO District 306 D2 Website
 
 A rebuild of the LEO District 306 D2 website in **Next.js 16** (App Router) + **TypeScript** +
 **Tailwind CSS v4**. All page content lives in typed data files under `src/data/`, so the site can be
@@ -62,16 +62,16 @@ scripts/                  # one-off helpers to (re)sync assets/content from the 
 
 > Note: the initial rebuild also "corrected" the contact email (`…@306a2.org` → `…@306d2.org`) and
 > replaced the social media links with placeholders, both on the assumption that the `306a2`
-> email/accounts belonged to a different district. That assumption was wrong — both were restored
+> email/accounts belonged to a different district. That assumption was wrong - both were restored
 > to their original values in `src/data/site.ts`.
 
 ## Remaining TODOs (need info from the district)
-- [ ] **DP theme logo** — replace `public/images/logos/DP-logo-2026-27.png` (currently a placeholder using last year's DP logo) with the official "United in Purpose" 2026/27 artwork. Keep the same filename; no code change needed.
-- [ ] **Brand Guidelines PDF** — placeholder (no `href`) in the Logos & Branding section of `src/data/downloads.ts`.
-- [ ] **Replace placeholder headshots** (`/images/unknown person.jpg`) — flagged with `placeholder: true` in `src/data/leaders.ts` (Ranmal Perera, Durga, Umayangi de Silva, Pamudi Vimansa, Thathsara Wagasenevi, Zahra Zuhri, Dimuth Samaraweera).
-- [ ] **District Vice President photo** carries a "306 A2" event watermark — see note in `leaders.ts`.
+- [ ] **DP theme logo** - replace `public/images/logos/DP-logo-2026-27.png` (currently a placeholder using last year's DP logo) with the official "United in Purpose" 2026/27 artwork. Keep the same filename; no code change needed.
+- [ ] **Brand Guidelines PDF** - placeholder (no `href`) in the Logos & Branding section of `src/data/downloads.ts`.
+- [ ] **Replace placeholder headshots** (`/images/unknown person.jpg`) - flagged with `placeholder: true` in `src/data/leaders.ts` (Ranmal Perera, Durga, Umayangi de Silva, Pamudi Vimansa, Thathsara Wagasenevi, Zahra Zuhri, Dimuth Samaraweera).
+- [ ] **District Vice President photo** carries a "306 A2" event watermark - see note in `leaders.ts`.
 - [ ] **Confirm** the canonical spelling of "Eshan Kasturiarachchi".
-- [ ] **Fill in remaining clubs** — only Zone A1's 3 clubs have detail; zones A2/B1/B2/C1/C2 are scaffolded in `src/data/clubs.ts`.
+- [ ] **Zone for Piliyandala Central College** - the council workbook lists 19 clubs but assigns only 18 to zones; this one is unplaced in `src/data/clubs.ts`.
 
 ## Re-syncing from the live site
 `scripts/fetch-assets.mjs` re-downloads all images into `public/`.

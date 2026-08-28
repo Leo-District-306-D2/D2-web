@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
 import ClubsExplorer from "@/components/ClubsExplorer";
-import { regions } from "@/data/clubs";
+import { allClubs, regions } from "@/data/clubs";
 
 export const metadata: Metadata = {
   title: "Clubs",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const glance = [
   { value: regions.length, label: "Regions" },
   { value: regions.reduce((n, r) => n + r.zones.length, 0), label: "Zones" },
-  { value: 18, label: "Total Clubs" },
+  { value: allClubs.length, label: "Total Clubs" },
 ];
 
 export default function ClubsPage() {
@@ -65,7 +65,7 @@ export default function ClubsPage() {
                 <div className="flex items-center justify-between">
                   <h3 className="font-display text-xl font-bold text-brand">{r.name}</h3>
                   <span className="rounded-full bg-brand px-3 py-1 text-xs font-bold text-white">
-                    {r.zones.reduce((n, z) => n + Math.max(z.clubs.length, 3), 0)} Clubs
+                    {r.zones.reduce((n, z) => n + z.clubs.length, 0)} Clubs
                   </span>
                 </div>
                 <p className="mt-1 text-sm text-muted">
@@ -76,7 +76,7 @@ export default function ClubsPage() {
                     <li key={z.id} className="rounded-lg bg-surface p-3">
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-ink">Zone {z.id}</span>
-                        <span className="text-xs text-muted">{Math.max(z.clubs.length, 3)} clubs</span>
+                        <span className="text-xs text-muted">{z.clubs.length} clubs</span>
                       </div>
                       <p className="mt-0.5 text-xs text-muted">Director: {z.director.replace(/^Leo /, "")}</p>
                     </li>

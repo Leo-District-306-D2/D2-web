@@ -3,18 +3,18 @@
 @theme {
   /* Palette sampled directly from the "United in Purpose" 2026/27 DP badge.
      Backgrounds stay white; navy carries structure, gold carries accent. */
-  --color-brand: #284e63; /* deep teal-navy — headings, links, primary text accents */
+  --color-brand: #284e63; /* deep teal-navy - headings, links, primary text accents */
   --color-brand-deep: #1e455d; /* gradient partner */
-  --color-brand-dark: #142934; /* darkest navy — footer + dark bands */
+  --color-brand-dark: #142934; /* darkest navy - footer + dark bands */
   --color-brand-light: #2d566d;
   --color-brand-50: #f2f6f8; /* faint navy tint for icon wells */
   --color-brand-100: #dde8ee;
   --color-slate: #5b7688; /* muted secondary */
 
-  --color-gold: #d2a74a; /* metallic gold — primary accent */
+  --color-gold: #d2a74a; /* metallic gold - primary accent */
   --color-gold-deep: #c59533; /* richer gold for icons/gradients */
   --color-gold-dark: #96701e; /* accessible gold for text on white (~5:1) */
-  --color-gold-light: #ecd48f; /* highlight gold — labels on dark */
+  --color-gold-light: #ecd48f; /* highlight gold - labels on dark */
   --color-maroon: #7a1533;
 
   --color-ink: #142934; /* navy-tinted body/heading ink */
@@ -75,7 +75,7 @@ body {
   }
   .btn:hover { transform: scale(1.05); }
 
-  /* Primary CTA — bright golden-yellow, with navy text for contrast. */
+  /* Primary CTA - bright golden-yellow, with navy text for contrast. */
   .btn-primary {
     background-image: linear-gradient(to right, #ffd21a, #f5b301);
     color: var(--color-brand-dark);
@@ -86,7 +86,7 @@ body {
     box-shadow: 0 14px 24px -8px color-mix(in srgb, #f5b301 70%, transparent);
   }
 
-  /* Secondary CTA — navy. */
+  /* Secondary CTA - navy. */
   .btn-slate {
     background-image: linear-gradient(to right, var(--color-brand), var(--color-brand-dark));
     color: #fff;
@@ -192,14 +192,14 @@ body {
 .animate-pulse-slow { animation: pulse-slow-kf 4s ease-in-out infinite; }
 .animate-pulse-slow-delay { animation: pulse-slow-kf 4s ease-in-out 1s infinite; }
 
-/* Hero badge — subtle bob (gentler than the generic float). */
+/* Hero badge - subtle bob (gentler than the generic float). */
 @keyframes float-gentle {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-28px); }
 }
 .animate-float-gentle { animation: float-gentle 7s ease-in-out infinite; }
 
-/* Hero badge — a metallic light-gleam that sweeps diagonally across the emblem.
+/* Hero badge - a metallic light-gleam that sweeps diagonally across the emblem.
    The element is masked to the badge PNG (via inline mask-image), so the moving
    highlight only appears on the badge silhouette, like light catching polished gold. */
 .badge-shine {
@@ -234,7 +234,7 @@ body {
   22%, 100% { transform: translateX(320%) skewX(-12deg); }
 }
 
-/* Hero badge — twinkling gold glints around the emblem. */
+/* Hero badge - twinkling gold glints around the emblem. */
 .sparkle {
   position: absolute;
   background: #fff;
