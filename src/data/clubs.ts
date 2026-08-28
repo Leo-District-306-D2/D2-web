@@ -25,7 +25,7 @@ export const allClubs: string[] = [
 
 // District structure: 3 regions, 6 zones, ~18 clubs.
 // Zone A1 has confirmed detail from the live site. Remaining zones are scaffolded with
-// TODO placeholders — fill in each zone's clubs (name / president / member count).
+// TODO placeholders fill in each zone's clubs (name / president / member count).
 export const regions: Region[] = [
   {
     id: "A",

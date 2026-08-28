@@ -1,6 +1,6 @@
 import type { Service } from "@/lib/types";
 
-// "What We Do?" — the nine focus areas shown on the homepage.
+// "What We Do?"  the nine focus areas shown on the homepage.
 export const services: Service[] = [
   {
     title: "Leadership Development",

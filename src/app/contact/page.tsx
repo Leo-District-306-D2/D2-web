@@ -18,8 +18,7 @@ export default function ContactPage() {
     <>
       <section className="bg-brand-dark py-16 text-white md:py-20">
         <div className="container-page text-center">
-          <span className="eyebrow text-gold!"><span className="h-px w-6 bg-current" /> Contact Us</span>
-          <h1 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">Contact Us</h1>
+          <h1 className="font-display text-4xl font-extrabold sm:text-5xl">Contact Us</h1>
           <p className="mx-auto mt-4 max-w-2xl text-white/70">
             Get in touch with LEO District 306 D2 for any inquiries or support.
           </p>

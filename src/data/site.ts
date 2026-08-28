@@ -23,7 +23,7 @@ export const site = {
 
   logos: {
     // Official high-resolution branding assets (public/images/logos/official/).
-    // Square Leo movement emblem. No longer used in the UI — the DP theme badge (`dp` below)
+    // Square Leo movement emblem. No longer used in the UI  the DP theme badge (`dp` below)
     // took over the footer, favicon and Organization logo. Still offered on /downloads.
     emblem: "/images/logos/official/leo-emblem.png",
     emblemWhite: "/images/logos/official/leo-emblem-white.png",
@@ -32,7 +32,7 @@ export const site = {
     lions: "/images/logos/official/lions-emblem-blue.png", // Lions Clubs International
     leoLion: "/images/logos/official/leo-lion-emblem.png", // Leo-Lion
     mdp: "/images/logos/official/mdp-lead-for-a-change.png", // MD President 2026/27 theme
-    // District President's yearly theme emblem — official "United in Purpose" 2026/27 artwork.
+    // District President's yearly theme emblem  official "United in Purpose" 2026/27 artwork.
     // If this is ever replaced, change the FILENAME too: next/image caches by URL, so
     // overwriting in place serves a stale image until .next/cache/images is cleared.
     dp: "/images/logos/DP-logo-united-in-purpose-2026-27.png",
@@ -50,7 +50,7 @@ export const site = {
   },
 } as const;
 
-// Social accounts — kept as they were on the previous site.
+// Social accounts  kept as they were on the previous site.
 export const socials: SocialLink[] = [
   { label: "Facebook", href: "https://www.facebook.com/leo306a2", icon: "facebook" },
   { label: "X (Twitter)", href: "https://x.com/A2Buzz", icon: "x" },
@@ -59,7 +59,7 @@ export const socials: SocialLink[] = [
   { label: "YouTube", href: "https://www.youtube.com/user/leo306a2", icon: "youtube" },
 ];
 
-// Homepage counters. Live site rendered these as 0 — real target values below.
+// Homepage counters. Live site rendered these as 0  real target values below.
 export const stats: Stat[] = [
   { value: "1000+", label: "Leos" },
   { value: "18", label: "LEO Clubs" },
