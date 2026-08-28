@@ -73,3 +73,29 @@ export type DownloadFile = {
 export type DownloadCategory = { title: string; files: DownloadFile[] };
 
 export type TimelineEvent = { year: string; title: string; description: string };
+
+/** One monthly newsletter issue. */
+export type NewsletterIssue = {
+  /** "2026-07". Sorts naturally as a string; formatted for display at render time. */
+  month: string;
+  /** Optional override; defaults to the formatted month. */
+  title?: string;
+  /** Cover thumbnail under public/. Omit to fall back to the generated cover. */
+  cover?: string;
+  /**
+   * Where the PDF lives: either a local "/downloads/..." path or an absolute external
+   * URL. Hosting is deliberately not baked in, so moving the files later (Drive, a CDN)
+   * is a data edit rather than a component change. Undefined means "coming soon".
+   */
+  file?: string;
+  /** Embeddable preview URL when it differs from `file` (e.g. a Drive /preview link). */
+  previewUrl?: string;
+};
+
+/** A publisher of newsletters: the district itself, or one club. */
+export type NewsletterSource = {
+  slug: string; // "district", or a club slug
+  name: string;
+  scope: "district" | "club";
+  issues: NewsletterIssue[]; // may be empty
+};

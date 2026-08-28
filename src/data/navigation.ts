@@ -13,6 +13,7 @@ export const mainNav: NavItem[] = [
   },
   { label: "Clubs", href: "/clubs" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Newsletters", href: "/newsletters" },
   { label: "Downloads", href: "/downloads" },
   { label: "Contact", href: "/contact" },
 ];
@@ -26,6 +27,7 @@ export const footerNav = {
   ],
   resources: [
     { label: "Gallery", href: "/gallery" },
+    { label: "Newsletters", href: "/newsletters" },
     { label: "Downloads", href: "/downloads" },
     { label: "Contact", href: "/contact" },
   ],
