@@ -24,7 +24,7 @@ export default function Footer() {
               <div className="relative h-28 w-28 sm:h-40 sm:w-40">
                 <Image
                   src={site.logos.dp}
-                  alt={`LEO District 306 D2 — ${site.dpTheme.theme} ${site.dpTheme.year}`}
+                  alt={`LEO District 306 D2  ${site.dpTheme.theme} ${site.dpTheme.year}`}
                   fill
                   className="object-contain"
                   sizes="160px"

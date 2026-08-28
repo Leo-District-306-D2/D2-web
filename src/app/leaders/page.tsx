@@ -15,8 +15,7 @@ export default function LeadersPage() {
     <>
       <section className="bg-brand-dark py-16 text-white md:py-20">
         <div className="container-page text-center">
-          <span className="eyebrow text-gold!"><span className="h-px w-6 bg-current" /> Our Leaders</span>
-          <h1 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">Our Leaders</h1>
+          <h1 className="font-display text-4xl font-extrabold sm:text-5xl">Our Leaders</h1>
           <p className="mx-auto mt-4 max-w-2xl text-white/70">
             Dedicated leaders who guide LEO District 306 D2 towards excellence through visionary leadership and
             unwavering commitment to community service.

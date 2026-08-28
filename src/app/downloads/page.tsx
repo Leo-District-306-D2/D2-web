@@ -13,8 +13,7 @@ export default function DownloadsPage() {
     <>
       <section className="bg-brand-dark py-16 text-white md:py-20">
         <div className="container-page text-center">
-          <span className="eyebrow text-gold!"><span className="h-px w-6 bg-current" /> Resources</span>
-          <h1 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">Downloads</h1>
+          <h1 className="font-display text-4xl font-extrabold sm:text-5xl">Downloads</h1>
           <p className="mx-auto mt-4 max-w-2xl text-white/70">
             Official documents, forms, and branding resources for clubs and officers.
           </p>

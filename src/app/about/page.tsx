@@ -9,7 +9,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About LEO District 306 D2 — our mission, vision, formation journey, and place in the global Leo movement.",
+    "About LEO District 306 D2  our mission, vision, formation journey, and place in the global Leo movement.",
 };
 
 export default function AboutPage() {
@@ -18,8 +18,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-brand-dark py-16 text-white md:py-20">
         <div className="container-page text-center">
-          <span className="eyebrow text-gold!"><span className="h-px w-6 bg-current" /> About Us</span>
-          <h1 className="mt-3 font-display text-4xl font-extrabold sm:text-5xl">{about.hero.title}</h1>
+          <h1 className="font-display text-4xl font-extrabold sm:text-5xl">{about.hero.title}</h1>
           <p className="mx-auto mt-4 max-w-2xl text-white/70">{about.hero.subtitle}</p>
         </div>
       </section>
@@ -41,7 +40,7 @@ export default function AboutPage() {
       {/* Formation journey timeline */}
       <section className="bg-surface py-20">
         <div className="container-page">
-          <SectionHeading eyebrow="Our Journey" title="District 306 D2 Formation Journey" subtitle="Our path to excellence in leadership development." />
+          <SectionHeading title="District 306 D2 Formation Journey" subtitle="Our path to excellence in leadership development." />
           <ol className="relative mt-14 border-l-2 border-brand-100 pl-8 md:mx-auto md:max-w-3xl">
             {about.formationJourney.map((e) => (
               <li key={e.year} className="relative mb-10 last:mb-0">
@@ -76,7 +75,7 @@ export default function AboutPage() {
       {/* Global movement */}
       <section className="bg-brand py-20 text-white">
         <div className="container-page">
-          <SectionHeading light eyebrow="A Global Movement" title="Part of a Global Movement" subtitle="Leo District 306 D2 is part of the worldwide Leo family under Lions Clubs International." />
+          <SectionHeading light title="Part of a Global Movement" subtitle="Leo District 306 D2 is part of the worldwide Leo family under Lions Clubs International." />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {about.globalMovement.map((g) => (
               <div key={g.title} className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur">

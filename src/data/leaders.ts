@@ -7,8 +7,15 @@ const DIR = "/images/leaders/District Directors";
 const RZD = "/images/leaders/Region and Zone Directors";
 const PLACEHOLDER = "/images/unknown person.jpg";
 
-// 2026/27 District Council. Photo filenames include the officer's name so that swapping a
-// photo changes the URL — next/image caches by URL and would otherwise serve a stale image.
+// 2026/27 District Council. Names and titles follow the "District Council" tab of the council
+// workbook "D2 Council Info 2026/27.xlsx". Note its "Region and Zones" tab spells four of them
+// differently (Siriwardhane / Dhananjaya / Gunathilake / Sandunika); the District Council tab wins.
+// Two deliberate departures from that tab: Thisuri Nisalya is grouped under Chief Coordinators to
+// match her title (the tab lists her in the Key Council Officers block), and Lohan Ekanayake's
+// title keeps the singular "Administration" rather than the tab's "Administrations".
+//
+// Photo filenames include the officer's name so that swapping a
+// photo changes the URL - next/image caches by URL and would otherwise serve a stale image.
 // Several officers moved up from a 2025/26 seat, so their existing photo is reused under its
 // old filename (same person, same photo → no cache concern).
 export const leaderGroups: LeaderGroup[] = [
@@ -29,7 +36,7 @@ export const leaderGroups: LeaderGroup[] = [
         name: "Leo Lion Bonomi Tharinda",
         title: "District Vice President",
         image: `${EXEC}/District Vice President - Bonomi Tharinda.jpg`,
-        note: "Photo is from a 306 A2 district event — his lapel badge reads 'LEO DISTRICT 306 A2' and the backdrop shows A2 conference branding. The alternate photo supplied in Jul 2026 is also a 306 A2 conference shot (worse — full A2 backdrop + copyright bar), so this cropped one is kept. Replace with a clean 306 D2 headshot when available.",
+        note: "Photo is from a 306 A2 district event - his lapel badge reads 'LEO DISTRICT 306 A2' and the backdrop shows A2 conference branding. The alternate photo supplied in Jul 2026 is also a 306 A2 conference shot (worse - full A2 backdrop + copyright bar), so this cropped one is kept. Replace with a clean 306 D2 headshot when available.",
       },
       {
         name: "Lion Sumudu Amarasinghe",
@@ -49,14 +56,14 @@ export const leaderGroups: LeaderGroup[] = [
         note: "No photo supplied in the Jul 2026 batch.",
       },
       {
-        // Darshika was Zone Director Zone C2 in 2025/26 — reusing her existing photo.
-        name: "Leo Darshika Prabhashwara",
+        // Darshika was Zone Director Zone C2 in 2025/26 - reusing her existing photo.
+        name: "Leo Lion Darshika Prabhashwara",
         title: "District Treasurer",
         image: `${RZD}/Darshika Prabhashwara.jpg`,
       },
       {
         name: "Leo Lion Nomin Premarathna",
-        title: "Membership Chairperson",
+        title: "Membership Council Chairperson",
         image: `${KCO}/Membership Chairperson - Nomin Premarathna.jpg`,
         note: "Supplied photo has a 306 A2 conference backdrop; a plain D2 headshot would be better.",
       },
@@ -84,7 +91,7 @@ export const leaderGroups: LeaderGroup[] = [
         note: "No photo supplied in the Jul 2026 batch.",
       },
       {
-        // Buwanaji was Region Director Region C in 2025/26 — reusing his existing photo.
+        // Buwanaji was Region Director Region C in 2025/26 - reusing his existing photo.
         name: "Leo Lion Buwanaji Munasinghe",
         title: "Chief Coordinator - Leo-Lion Relationships",
         image: `${RZD}/Region Director Region C.jpg`,
@@ -95,9 +102,9 @@ export const leaderGroups: LeaderGroup[] = [
         image: `${CC}/Chief Coordinator Administration - Sewwandi Gunasinghe.jpg`,
       },
       {
-        // Devinda was District Secretary in 2025/26 — reusing his existing photo.
+        // Devinda was District Secretary in 2025/26 - reusing his existing photo.
         name: "Leo Devinda Perera",
-        title: "Chief Coordinator - Council Officer",
+        title: "Chief Coordinator - Council Officers",
         image: `${KCO}/District Secretary.jpg`,
       },
       {
@@ -111,7 +118,7 @@ export const leaderGroups: LeaderGroup[] = [
         image: `${CC}/Chief Coordinator Fundraising - Durga Hashini.jpg`,
       },
       {
-        // Lehan was District Treasurer in 2025/26 — reusing his existing photo.
+        // Lehan was District Treasurer in 2025/26 - reusing his existing photo.
         name: "Leo Lion Lehan Randitha",
         title: "Chief Coordinator - Line Officers",
         image: `${KCO}/District Treasurer.jpg`,
@@ -142,12 +149,12 @@ export const leaderGroups: LeaderGroup[] = [
     section: "Region B",
     members: [
       {
-        name: "Leo Lion Mindula Gunathilake",
+        name: "Leo Mindula Gunathilaka",
         title: "Region Director - Region B",
         image: `${RZD}/Region Director Region B - Mindula Gunathilake.jpg`,
       },
       {
-        name: "Leo Mauli Siriwardhane",
+        name: "Leo Lion Maulie Siriwardena",
         title: "Zone Director - Zone B1",
         image: `${RZD}/Zone Director Zone B1 - Mauli Siriwardhane.jpg`,
       },
@@ -172,7 +179,7 @@ export const leaderGroups: LeaderGroup[] = [
         image: `${RZD}/Zone Director Zone C1 - Chathuka Nilakshana.jpg`,
       },
       {
-        name: "Leo Hasitha Dhananjaya",
+        name: "Leo Hasitha Dananjaya",
         title: "Zone Director - Zone C2",
         image: PLACEHOLDER,
         placeholder: true,
@@ -191,7 +198,7 @@ export const leaderGroups: LeaderGroup[] = [
         note: "No photo supplied in the Jul 2026 batch.",
       },
       {
-        name: "Leo Malshi Sandunika",
+        name: "Leo Lion Malshi Sadunika",
         title: "District Director - Membership Retention & Growth",
         image: `${DIR}/District Director Membership - Malshi Sandunika.jpg`,
       },
@@ -210,7 +217,7 @@ export const leaderGroups: LeaderGroup[] = [
         title: "District Director - IT",
         image: PLACEHOLDER,
         placeholder: true,
-        note: "No photo supplied in the Jul 2026 batch. (2025/26 IT director was Prabash Liyanage — a different person — so that photo is not reused.)",
+        note: "No photo supplied in the Jul 2026 batch. (2025/26 IT director was Prabash Liyanage - a different person - so that photo is not reused.)",
       },
       {
         name: "Leo Akindu Kalhan",
@@ -223,7 +230,7 @@ export const leaderGroups: LeaderGroup[] = [
         image: `${DIR}/District Director Leo Lion - Janaja De Alwis.jpg`,
       },
       {
-        name: "Leo Vidumini Sanjula",
+        name: "Leo Lion Vidumini Sanjula",
         title: "District Director - Editorial Panel",
         image: `${DIR}/District Director Editorial - Vidumini Sanjula.jpg`,
       },

@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { site, socials } from "@/data/site";
 
-// The live site uses Geist (Next's default) — matched here so type metrics line up.
+// The live site uses Geist (Next's default) - matched here so type metrics line up.
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "LEO District 306 D2 — Leadership, Experience, Opportunity",
+    default: "LEO District 306 D2: Leadership, Experience, Opportunity",
     template: "%s | LEO District 306 D2",
   },
   description: site.description,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: site.logos.dp,
         width: 1200,
         height: 1200,
-        alt: `LEO District 306 D2 — ${site.dpTheme.theme} ${site.dpTheme.year}`,
+        alt: `LEO District 306 D2: ${site.dpTheme.theme} ${site.dpTheme.year}`,
       },
     ],
   },
