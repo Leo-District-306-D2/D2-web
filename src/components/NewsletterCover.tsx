@@ -22,7 +22,9 @@ export default function NewsletterCover({
         alt={issue.title ?? formatMonth(issue.month)}
         fill
         sizes={sizes}
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        // contain, not cover: covers arrive in varying page sizes and cropping would slice
+        // off mastheads and page furniture the clubs designed.
+        className="object-contain transition-transform duration-500 group-hover:scale-105"
       />
     );
   }

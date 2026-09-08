@@ -48,26 +48,59 @@ export function latestIssue(source: NewsletterSource): NewsletterIssue | undefin
   return sortedIssues(source)[0];
 }
 
-// The district's own newsletter. Sample entries so the layout can be reviewed before real
-// issues exist; replace `month` values and add `file` / `cover` as they are published.
+// The district's own newsletter. No issues published yet, so the rack shows its empty state.
 export const districtNewsletter: NewsletterSource = {
   slug: "district",
   name: "District 306 D2 Newsletter",
   scope: "district",
-  issues: [
-    { month: "2026-08" },
-    { month: "2026-07" },
+  issues: [],
+};
+
+/**
+ * Published club newsletters, keyed by club slug.
+ *
+ * Files live at public/newsletters/<slug>/<leo year>/<YYYY-MM>.pdf, with the first page
+ * rendered alongside as <YYYY-MM>-cover.jpg. The Leo year runs
+ * July to June, so 2026-27 holds 2026-07 through 2027-06. Add a club's key here as soon as it
+ * submits; clubs with no key render "No newsletters yet".
+ */
+const publishedIssues: Record<string, NewsletterIssue[]> = {
+  kalubowila: [
+    { month: "2026-07", file: "/newsletters/kalubowila/2026-27/2026-07.pdf", cover: "/newsletters/kalubowila/2026-27/2026-07-cover.jpg" },
+    { month: "2026-08", file: "/newsletters/kalubowila/2026-27/2026-08.pdf", cover: "/newsletters/kalubowila/2026-27/2026-08-cover.jpg" },
+  ],
+  piliyandala: [
+    // "Inspire 2026 Volume 11 Issue 02". The file names no month; August assumed from the
+    // issue number. Correct here if that is wrong.
+    { month: "2026-08", file: "/newsletters/piliyandala/2026-27/2026-08.pdf", cover: "/newsletters/piliyandala/2026-27/2026-08-cover.jpg" },
+  ],
+  "university-of-moratuwa": [
+    { month: "2026-07", file: "/newsletters/university-of-moratuwa/2026-27/2026-07.pdf", cover: "/newsletters/university-of-moratuwa/2026-27/2026-07-cover.jpg" },
+    { month: "2026-08", file: "/newsletters/university-of-moratuwa/2026-27/2026-08.pdf", cover: "/newsletters/university-of-moratuwa/2026-27/2026-08-cover.jpg" },
+  ],
+  // "La Rivista" is published on AnyFlip rather than as a PDF, so it is read online and has
+  // no download. The online.anyflip.com host is the chrome-free embed; the plain anyflip.com
+  // page renders the whole AnyFlip site inside the frame.
+  raththanapitiya: [
+    { month: "2026-08", previewUrl: "https://online.anyflip.com/oggim/egjg/", cover: "/newsletters/raththanapitiya/2026-27/2026-08-cover.jpg" },
+  ],
+  // "The Leo Times" Volume 08 Issue 02, also AnyFlip-hosted. The cover names no month; August
+  // is taken from its International Youth Day lead and from Issue 02 elsewhere being August.
+  "sri-lanka-technological-campus": [
+    { month: "2026-08", previewUrl: "https://online.anyflip.com/pkyeo/ckbw/", cover: "/newsletters/sri-lanka-technological-campus/2026-27/2026-08-cover.jpg" },
+  ],
+  "university-of-sri-jayewardenepura": [
+    // Volume 08 Issue 01 names no month; July assumed, since Issue 02 is dated August.
+    { month: "2026-07", file: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-07.pdf", cover: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-07-cover.jpg" },
+    { month: "2026-08", file: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-08.pdf", cover: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-08-cover.jpg" },
   ],
 };
 
 // One entry per member club, generated from `allClubs` so the two lists cannot drift apart.
-// Every club starts empty and gains issues as they are submitted.
-export const clubNewsletters: NewsletterSource[] = allClubs.map((name) => ({
-  slug: slugify(name),
-  name,
-  scope: "club" as const,
-  issues: [],
-}));
+export const clubNewsletters: NewsletterSource[] = allClubs.map((name) => {
+  const slug = slugify(name);
+  return { slug, name, scope: "club" as const, issues: publishedIssues[slug] ?? [] };
+});
 
 /** Every source, district first. Used for routing and lookups. */
 export const newsletterSources: NewsletterSource[] = [districtNewsletter, ...clubNewsletters];

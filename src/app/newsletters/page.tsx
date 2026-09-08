@@ -38,7 +38,7 @@ export default function NewslettersPage() {
 
           {latest ? (
             <div className="mt-10 grid items-center gap-8 lg:grid-cols-[minmax(0,20rem)_1fr]">
-              <div className="card relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden lg:mx-0">
+              <div className="card relative mx-auto aspect-[210/297] w-full max-w-xs overflow-hidden bg-brand-dark lg:mx-0">
                 <NewsletterCover issue={latest} featured sizes="(max-width: 1024px) 80vw, 20rem" />
               </div>
               <div>
