@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { NewsletterSource } from "@/lib/types";
 import { formatMonth, latestIssue } from "@/data/newsletters";
-import { ArrowRight, FileTextIcon } from "./Icons";
+import { FileTextIcon } from "./Icons";
 
 /**
  * The club shelf on the rack page. A club with no issues is rendered greyed and is not a
@@ -30,9 +30,8 @@ export default function ClubNewsletterGrid({ sources }: { sources: NewsletterSou
                   <p className="mt-1 text-sm text-muted">
                     Latest: <span className="font-medium text-ink">{formatMonth(latest.month)}</span>
                   </p>
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-brand">
+                  <span className="mt-2 inline-flex items-center text-xs font-semibold uppercase tracking-wide text-brand">
                     {count} {count === 1 ? "newsletter" : "newsletters"}
-                    <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </>
               ) : (

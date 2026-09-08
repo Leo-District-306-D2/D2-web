@@ -71,7 +71,10 @@ export default function NewsletterShelf({
         }
       >
         {issues.map((issue, i) => {
-          const available = Boolean(issue.file);
+          // Readable covers both a local PDF and an external flipbook; only a real file
+          // can be downloaded.
+          const canRead = Boolean(issue.previewUrl ?? issue.file);
+          const canDownload = Boolean(issue.file);
           return (
             <div
               key={issue.month}
@@ -82,12 +85,12 @@ export default function NewsletterShelf({
               <button
                 type="button"
                 onClick={() => setActive(i)}
-                disabled={!available}
+                disabled={!canRead}
                 aria-label={`Preview ${issueTitle(issue)}`}
-                className="relative block aspect-[3/4] w-full overflow-hidden bg-brand-50 disabled:cursor-default"
+                className="relative block aspect-[210/297] w-full overflow-hidden bg-brand-dark disabled:cursor-default"
               >
                 <NewsletterCover issue={issue} />
-                {available && (
+                {canRead && (
                   <span className="absolute inset-0 flex items-center justify-center bg-brand-dark/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-brand">
                       <EyeIcon className="h-4 w-4" /> Preview
@@ -98,7 +101,7 @@ export default function NewsletterShelf({
 
               <div className="flex items-center justify-between gap-3 border-t border-black/5 p-4">
                 <p className="min-w-0 truncate font-display font-semibold text-ink">{issueTitle(issue)}</p>
-                {available ? (
+                {canDownload ? (
                   <a
                     href={issue.file}
                     download
@@ -109,6 +112,10 @@ export default function NewsletterShelf({
                   >
                     <DownloadIcon className="h-4 w-4" /> PDF
                   </a>
+                ) : canRead ? (
+                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand">
+                    <EyeIcon className="h-4 w-4" /> Read
+                  </span>
                 ) : (
                   <span className="shrink-0 text-xs font-semibold uppercase tracking-wide text-muted">
                     Coming soon
@@ -167,15 +174,17 @@ export default function NewsletterShelf({
               className="min-h-0 w-full flex-1 rounded-lg border-0 bg-white"
             />
             <div className="mt-3 flex flex-wrap justify-center gap-3">
-              <a
-                href={current.file}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-brand hover:bg-white/90"
-              >
-                <DownloadIcon className="h-4 w-4" /> Download
-              </a>
+              {current.file && (
+                <a
+                  href={current.file}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-brand hover:bg-white/90"
+                >
+                  <DownloadIcon className="h-4 w-4" /> Download
+                </a>
+              )}
               <a
                 href={previewSrc}
                 target="_blank"
