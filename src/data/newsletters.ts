@@ -78,11 +78,11 @@ const publishedIssues: Record<string, NewsletterIssue[]> = {
     { month: "2026-07", file: "/newsletters/university-of-moratuwa/2026-27/2026-07.pdf", cover: "/newsletters/university-of-moratuwa/2026-27/2026-07-cover.jpg" },
     { month: "2026-08", file: "/newsletters/university-of-moratuwa/2026-27/2026-08.pdf", cover: "/newsletters/university-of-moratuwa/2026-27/2026-08-cover.jpg" },
   ],
-  // "La Rivista" is published on AnyFlip rather than as a PDF, so it is read online and has
-  // no download. The online.anyflip.com host is the chrome-free embed; the plain anyflip.com
-  // page renders the whole AnyFlip site inside the frame.
+  // "La Rivista". Supplied as PDFs, so these replaced the earlier AnyFlip embed and are now
+  // downloadable like the rest. Months are printed on the covers: Issue 01 July, Issue 02 August.
   raththanapitiya: [
-    { month: "2026-08", previewUrl: "https://online.anyflip.com/oggim/egjg/", cover: "/newsletters/raththanapitiya/2026-27/2026-08-cover.jpg" },
+    { month: "2026-07", file: "/newsletters/raththanapitiya/2026-27/2026-07.pdf", cover: "/newsletters/raththanapitiya/2026-27/2026-07-cover.jpg" },
+    { month: "2026-08", file: "/newsletters/raththanapitiya/2026-27/2026-08.pdf", cover: "/newsletters/raththanapitiya/2026-27/2026-08-cover.jpg" },
   ],
   // "The Leo Times" Volume 08 Issue 02, also AnyFlip-hosted. The cover names no month; August
   // is taken from its International Youth Day lead and from Issue 02 elsewhere being August.
