@@ -74,6 +74,13 @@ const publishedIssues: Record<string, NewsletterIssue[]> = {
     // issue number. Correct here if that is wrong.
     { month: "2026-08", file: "/newsletters/piliyandala/2026-27/2026-08.pdf", cover: "/newsletters/piliyandala/2026-27/2026-08-cover.jpg" },
   ],
+  // "INSPIRO". Neither cover nor page text names a month, and the PDF creation dates only record
+  // when the files were compressed, so July and August are taken from the issue numbers, matching
+  // every other club this Leo year. Correct here if the club says otherwise.
+  "pepiliyana-woodlands": [
+    { month: "2026-07", file: "/newsletters/pepiliyana-woodlands/2026-27/2026-07.pdf", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-07-cover.jpg" },
+    { month: "2026-08", file: "/newsletters/pepiliyana-woodlands/2026-27/2026-08.pdf", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-08-cover.jpg" },
+  ],
   "university-of-moratuwa": [
     { month: "2026-07", file: "/newsletters/university-of-moratuwa/2026-27/2026-07.pdf", cover: "/newsletters/university-of-moratuwa/2026-27/2026-07-cover.jpg" },
     { month: "2026-08", file: "/newsletters/university-of-moratuwa/2026-27/2026-08.pdf", cover: "/newsletters/university-of-moratuwa/2026-27/2026-08-cover.jpg" },
