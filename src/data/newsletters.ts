@@ -65,9 +65,14 @@ export const districtNewsletter: NewsletterSource = {
  * submits; clubs with no key render "No newsletters yet".
  */
 const publishedIssues: Record<string, NewsletterIssue[]> = {
+  // "LEO INSIDER" Volume 7. Issues 01-02 keep their local PDFs (still downloadable); issues
+  // 03-04 are AnyFlip-only like every other club's new issues - no local file, no Download
+  // button. Matches the "Volume 7 | Issue N" covers the club sent for September/October.
   kalubowila: [
-    { month: "2026-07", file: "/newsletters/kalubowila/2026-27/2026-07.pdf", cover: "/newsletters/kalubowila/2026-27/2026-07-cover.jpg" },
-    { month: "2026-08", file: "/newsletters/kalubowila/2026-27/2026-08.pdf", cover: "/newsletters/kalubowila/2026-27/2026-08-cover.jpg" },
+    { month: "2026-07", file: "/newsletters/kalubowila/2026-27/2026-07.pdf", cover: "/newsletters/kalubowila/2026-27/2026-07-cover.jpg", previewUrl: "https://anyflip.com/tfsan/bbit/" },
+    { month: "2026-08", file: "/newsletters/kalubowila/2026-27/2026-08.pdf", cover: "/newsletters/kalubowila/2026-27/2026-08-cover.jpg", previewUrl: "https://anyflip.com/tfsan/mpoq/" },
+    { month: "2026-09", previewUrl: "https://anyflip.com/tfsan/vsal/", cover: "/newsletters/kalubowila/2026-27/2026-09-cover.png" },
+    { month: "2026-10", previewUrl: "http://online.anyflip.com/tfsan/bwmx/", cover: "/newsletters/kalubowila/2026-27/2026-10-cover.png" },
   ],
   // "IGNITE" Volume 02 Issue 01, AnyFlip-hosted - view-only, no local file and no Download
   // button. Names no month; July assumed, matching every other club's Issue 01 this Leo year.
@@ -96,10 +101,13 @@ const publishedIssues: Record<string, NewsletterIssue[]> = {
   ],
   // "INSPIRO". Neither cover nor page text names a month, and the PDF creation dates only record
   // when the files were compressed, so July and August are taken from the issue numbers, matching
-  // every other club this Leo year. Correct here if the club says otherwise.
+  // every other club this Leo year. Correct here if the club says otherwise. Issues 01-02 keep
+  // their local PDFs (still downloadable); issues 03-04 are AnyFlip-only, no Download button.
   "pepiliyana-woodlands": [
-    { month: "2026-07", file: "/newsletters/pepiliyana-woodlands/2026-27/2026-07.pdf", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-07-cover.jpg" },
-    { month: "2026-08", file: "/newsletters/pepiliyana-woodlands/2026-27/2026-08.pdf", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-08-cover.jpg" },
+    { month: "2026-07", file: "/newsletters/pepiliyana-woodlands/2026-27/2026-07.pdf", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-07-cover.jpg", previewUrl: "https://anyflip.com/nfaur/lqfv/" },
+    { month: "2026-08", file: "/newsletters/pepiliyana-woodlands/2026-27/2026-08.pdf", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-08-cover.jpg", previewUrl: "https://anyflip.com/yacgw/pofp/" },
+    { month: "2026-09", previewUrl: "https://anyflip.com/nfaur/xkrb/", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-09-cover.png" },
+    { month: "2026-10", previewUrl: "https://anyflip.com/nfaur/pjhb/", cover: "/newsletters/pepiliyana-woodlands/2026-27/2026-10-cover.png" },
   ],
   "university-of-moratuwa": [
     { month: "2026-07", file: "/newsletters/university-of-moratuwa/2026-27/2026-07.pdf", cover: "/newsletters/university-of-moratuwa/2026-27/2026-07-cover.jpg" },
@@ -116,10 +124,16 @@ const publishedIssues: Record<string, NewsletterIssue[]> = {
   "sri-lanka-technological-campus": [
     { month: "2026-08", previewUrl: "https://online.anyflip.com/pkyeo/ckbw/", cover: "/newsletters/sri-lanka-technological-campus/2026-27/2026-08-cover.jpg" },
   ],
+  // "J'PURA LEO READER" Volume 8. Issue 01's AnyFlip link is held back - the club sent the
+  // exact same Heyzine URL already used for panadura-alubomulla's Issue 01, so it is almost
+  // certainly a copy-paste mistake; confirm the real link before adding it here. Issues
+  // 03-04 are link-only (no local file, no Download button), matching the covers sent.
   "university-of-sri-jayewardenepura": [
     // Volume 08 Issue 01 names no month; July assumed, since Issue 02 is dated August.
     { month: "2026-07", file: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-07.pdf", cover: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-07-cover.jpg" },
-    { month: "2026-08", file: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-08.pdf", cover: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-08-cover.jpg" },
+    { month: "2026-08", file: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-08.pdf", cover: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-08-cover.jpg", previewUrl: "https://usjleo.vercel.app/magazine?id=pu8yTjg9nKc82U5iqRcE" },
+    { month: "2026-09", previewUrl: "https://usjleo.vercel.app/magazine?id=f33wzlsLjOzjRFbrgwSW", cover: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-09-cover.png" },
+    { month: "2026-10", previewUrl: "https://usjleo.vercel.app/magazine?id=xi7bM6Whg1pVk5Jpyegp", cover: "/newsletters/university-of-sri-jayewardenepura/2026-27/2026-10-cover.png" },
   ],
 };
 
