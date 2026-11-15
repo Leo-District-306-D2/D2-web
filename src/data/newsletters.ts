@@ -69,10 +69,30 @@ const publishedIssues: Record<string, NewsletterIssue[]> = {
     { month: "2026-07", file: "/newsletters/kalubowila/2026-27/2026-07.pdf", cover: "/newsletters/kalubowila/2026-27/2026-07-cover.jpg" },
     { month: "2026-08", file: "/newsletters/kalubowila/2026-27/2026-08.pdf", cover: "/newsletters/kalubowila/2026-27/2026-08-cover.jpg" },
   ],
+  // "IGNITE" Volume 02 Issue 01, AnyFlip-hosted - view-only, no local file and no Download
+  // button. Names no month; July assumed, matching every other club's Issue 01 this Leo year.
+  "gampaha-wickramarachchi-university-of-indigenous-medicine-fissms": [
+    { month: "2026-07", previewUrl: "https://anyflip.com/dszco/zmly/", cover: "/newsletters/gampaha-wickramarachchi-university-of-indigenous-medicine-fissms/2026-27/2026-07-cover.png" },
+  ],
+  // "The IXth Tale", Heyzine-hosted flipbooks - view-only, no local file and no Download
+  // button. Volume 01 issues 1-4 name no month; July-October assumed sequentially from the
+  // issue number, matching every other club this Leo year. Correct here if the club says
+  // otherwise.
+  "panadura-alubomulla": [
+    { month: "2026-07", previewUrl: "https://heyzine.com/flip-book/6f3fa9864b.html", cover: "/newsletters/panadura-alubomulla/2026-27/2026-07-cover.png" },
+    { month: "2026-08", previewUrl: "https://heyzine.com/flip-book/375e078f1e.html", cover: "/newsletters/panadura-alubomulla/2026-27/2026-08-cover.png" },
+    { month: "2026-09", previewUrl: "https://heyzine.com/flip-book/bb832216f2.html", cover: "/newsletters/panadura-alubomulla/2026-27/2026-09-cover.png" },
+    { month: "2026-10", previewUrl: "https://heyzine.com/flip-book/9292301890.html", cover: "/newsletters/panadura-alubomulla/2026-27/2026-10-cover.png" },
+  ],
+  // "INSPIRE". Now the club's own AnyFlip-hosted editions - view-only like
+  // sri-lanka-technological-campus below, no local file and no Download button. Volume 11
+  // issues 01-04 name no month; July-October assumed sequentially from the issue number,
+  // matching every other club this Leo year. Correct here if the club says otherwise.
   piliyandala: [
-    // "Inspire 2026 Volume 11 Issue 02". The file names no month; August assumed from the
-    // issue number. Correct here if that is wrong.
-    { month: "2026-08", file: "/newsletters/piliyandala/2026-27/2026-08.pdf", cover: "/newsletters/piliyandala/2026-27/2026-08-cover.jpg" },
+    { month: "2026-07", previewUrl: "https://anyflip.com/wqfao/bdxn/", cover: "/newsletters/piliyandala/2026-27/2026-07-cover.png" },
+    { month: "2026-08", previewUrl: "https://anyflip.com/wqfao/rrqc/", cover: "/newsletters/piliyandala/2026-27/2026-08-cover.jpg" },
+    { month: "2026-09", previewUrl: "https://anyflip.com/wqfao/aohg/", cover: "/newsletters/piliyandala/2026-27/2026-09-cover.png" },
+    { month: "2026-10", previewUrl: "https://anyflip.com/wqfao/kwst/", cover: "/newsletters/piliyandala/2026-27/2026-10-cover.png" },
   ],
   // "INSPIRO". Neither cover nor page text names a month, and the PDF creation dates only record
   // when the files were compressed, so July and August are taken from the issue numbers, matching
